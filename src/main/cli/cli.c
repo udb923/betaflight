@@ -3026,6 +3026,7 @@ static void cliVtxTable(const char *cmdName, char *cmdline)
         int count;
         for (count = 0; count < levels && (tok = strtok_r(NULL, " ", &saveptr)); count++) {
             strncpy(label[count], tok, VTX_TABLE_POWER_LABEL_LENGTH);
+            label[count][VTX_TABLE_POWER_LABEL_LENGTH] = '\0';
             for (unsigned i = 0; i < strlen(label[count]); i++) {
                 label[count][i] = toupper(label[count][i]);
             }
